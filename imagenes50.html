@@ -3,167 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IMAGENES PARA GLAMPING  C:</title>
+    <title>Imágenes Glamping - Unidad C:</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
-            background-color: #f5f5f5;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        .galeria {
+            padding: 0;
+            height: 100vh;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
-            padding: 20px;
-        }
-        .imagen-container {
-            position: relative;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
             overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            background: white;
-            transition: transform 0.3s;
-            height: 200px;
         }
-        .imagen-container:hover {
-            transform: scale(1.03);
+        
+        .imagen-container {
+            overflow: hidden;
+            position: relative;
         }
-        .imagen {
+        
+        .imagen-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            cursor: pointer;
+            transition: transform 0.3s;
         }
-        .pie-imagen {
+        
+        .imagen-container img:hover {
+            transform: scale(1.05);
+        }
+        
+        .titulo {
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
             right: 0;
             background: rgba(0,0,0,0.7);
             color: white;
-            padding: 5px;
-            font-size: 12px;
             text-align: center;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.9);
-            overflow: auto;
-        }
-        .modal-contenido {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 800px;
-            max-height: 80vh;
-            margin-top: 5vh;
-        }
-        .cerrar {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        @media (max-width: 768px) {
-            .galeria {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            }
+            padding: 10px;
+            font-size: 18px;
+            z-index: 10;
         }
     </style>
 </head>
 <body>
-    <h1>Galeria de Imagenes para GLAMPING  <!--  C:\imagenes</h1>      -->
-    <div class="galeria" id="galeria">
-        <!-- Las im?genes se cargar?n aqu? con JavaScript -->
+    <div class="titulo">Imágenes de Glamping - Unidad C:</div>
+    
+    <div class="imagen-container">
+        <img src="file:///C:/imagen1.jpg" alt="Imagen Glamping 1">
     </div>
-
-    <div id="modal" class="modal">
-        <span class="cerrar" onclick="cerrarModal()">&times;</span>
-        <img class="modal-contenido" id="imagen-modal">
+    <div class="imagen-container">
+        <img src="file:///C:/imagen2.jpg" alt="Imagen Glamping 2">
+    </div>
+    <div class="imagen-container">
+        <img src="file:///C:/imagen3.jpg" alt="Imagen Glamping 3">
+    </div>
+    <div class="imagen-container">
+        <img src="file:///C:/imagen4.jpg" alt="Imagen Glamping 4">
     </div>
 
     <script>
-        // Ruta base donde se encuentran las im?genes
-        const rutaBase = "file:///C://";
-        
-        // Nombres de las imagenes (ajusta esto a tus archivos reales)
-        const imagenes = [
-            "imagen1.jpg", "imagen2.jpg", "imagen3.jpg", "imagen4.jpg", "imagen5.jpg",
-            "imagen6.jpg", "imagen7.jpg", "imagen8.jpg", "imagen9.jpg", "imagen10.jpg",
-            "imagen11.jpg", "imagen12.jpg", "imagen13.jpg", "imagen14.jpg", "imagen15.jpg",
-            "imagen16.jpg", "imagen17.jpg", "imagen18.jpg", "imagen19.jpg", "imagen20.jpg",
-            "imagen21.jpg", "imagen22.jpg", "imagen23.jpg", "imagen24.jpg", "imagen25.jpg",
-            "imagen26.jpg", "imagen27.jpg", "imagen28.jpg", "imagen29.jpg", "imagen30.jpg",
-            "imagen31.jpg", "imagen32.jpg", "imagen33.jpg", "imagen34.jpg", "imagen35.jpg",
-            "imagen36.jpg", "imagen37.jpg", "imagen38.jpg", "imagen39.jpg", "imagen40.jpg",
-            "imagen41.jpg", "imagen42.jpg", "imagen43.jpg", "imagen44.jpg", "imagen45.jpg",
-            "imagen46.jpg", "imagen47.jpg", "imagen48.jpg", "imagen49.jpg", "imagen50.jpg"
-        ];
-
-        // Obtener referencia al contenedor de la galer?a
-        const galeria = document.getElementById('galeria');
-        
-        // Cargar im?genes en la galer?a
-        imagenes.forEach((imagen, index) => {
-            const rutaCompleta = rutaBase + imagen;
-            
-            const contenedor = document.createElement('div');
-            contenedor.className = 'imagen-container';
-            
-            const img = document.createElement('img');
-            img.src = rutaCompleta;
-            img.alt = `Imagen ${index + 1}`;
-            img.className = 'imagen';
-            img.onclick = function() {
-                abrirModal(rutaCompleta);
-            }
-            
-            const pie = document.createElement('div');
-            pie.className = 'pie-imagen';
-            pie.textContent = `Imagen ${index + 1}`;
-            
-            contenedor.appendChild(img);
-            contenedor.appendChild(pie);
-            galeria.appendChild(contenedor);
+        // Verificar si las imágenes existen y manejar errores
+        document.querySelectorAll('img').forEach(img => {
+            img.onerror = function() {
+                this.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"%3E%3Crect fill="%23ddd" width="400" height="300"/%3E%3Ctext fill="%23666" font-family="Arial" font-size="20" dy=".5em" text-anchor="middle" x="200" y="150"%3EImagen no encontrada%3C/text%3E%3C/svg%3E';
+                this.alt = 'Imagen no disponible';
+            };
         });
-
-        // Funciones para el modal
-        function abrirModal(rutaImagen) {
-            const modal = document.getElementById('modal');
-            const imagenModal = document.getElementById('imagen-modal');
-            
-            imagenModal.src = rutaImagen;
-            modal.style.display = "block";
-        }
-
-        function cerrarModal() {
-            document.getElementById('modal').style.display = "none";
-        }
-
-        // Cerrar modal al hacer clic fuera de la imagen
-        window.onclick = function(event) {
-            const modal = document.getElementById('modal');
-            if (event.target == modal) {
-                cerrarModal();
-            }
-        }
     </script>
 </body>
 </html>
