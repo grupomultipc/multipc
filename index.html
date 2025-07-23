@@ -2,169 +2,95 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IMAGENES PARA GLAMPING  C:</title>
+    <title>Galería de 50 Imágenes</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background: #fafafa;
             margin: 0;
-            padding: 20px;
-            background-color: #f5f5f5;
+            padding: 0;
         }
         h1 {
             text-align: center;
-            color: #333;
+            margin-top: 30px;
         }
-        .galeria {
+        .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
-            padding: 20px;
-        }
-        .imagen-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            background: white;
-            transition: transform 0.3s;
-            height: 200px;
-        }
-        .imagen-container:hover {
-            transform: scale(1.03);
-        }
-        .imagen {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            cursor: pointer;
-        }
-        .pie-imagen {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0,0,0,0.7);
-            color: white;
-            padding: 5px;
-            font-size: 12px;
-            text-align: center;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.9);
-            overflow: auto;
-        }
-        .modal-contenido {
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            padding: 30px;
+            max-width: 1400px;
             margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 800px;
-            max-height: 80vh;
-            margin-top: 5vh;
         }
-        .cerrar {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
+        .gallery img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            transition: transform 0.2s;
         }
-        @media (max-width: 768px) {
-            .galeria {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            }
+        .gallery img:hover {
+            transform: scale(1.06);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.22);
         }
     </style>
 </head>
 <body>
-    <h1>Galeria de Imagenes para GLAMPING  <!--  C:\imagenes</h1>      -->
-    <div class="galeria" id="galeria">
-        <!-- Las im?genes se cargar?n aqu? con JavaScript -->
+    <h1>Galería de 50 Imágenes</h1>
+    <div class="gallery">
+        <!-- 50 imágenes -->
+        <!-- Cambia el formato y nombres si tus archivos no son jpg y no se llaman img1.jpg, img2.jpg, etc -->
+        <img src="imagenes/img1.jpg" alt="Imagen 1">
+        <img src="imagenes/img2.jpg" alt="Imagen 2">
+        <img src="imagenes/img3.jpg" alt="Imagen 3">
+        <img src="imagenes/img4.jpg" alt="Imagen 4">
+        <img src="imagenes/img5.jpg" alt="Imagen 5">
+        <img src="imagenes/img6.jpg" alt="Imagen 6">
+        <img src="imagenes/img7.jpg" alt="Imagen 7">
+        <img src="imagenes/img8.jpg" alt="Imagen 8">
+        <img src="imagenes/img9.jpg" alt="Imagen 9">
+        <img src="imagenes/img10.jpg" alt="Imagen 10">
+        <img src="imagenes/img11.jpg" alt="Imagen 11">
+        <img src="imagenes/img12.jpg" alt="Imagen 12">
+        <img src="imagenes/img13.jpg" alt="Imagen 13">
+        <img src="imagenes/img14.jpg" alt="Imagen 14">
+        <img src="imagenes/img15.jpg" alt="Imagen 15">
+        <img src="imagenes/img16.jpg" alt="Imagen 16">
+        <img src="imagenes/img17.jpg" alt="Imagen 17">
+        <img src="imagenes/img18.jpg" alt="Imagen 18">
+        <img src="imagenes/img19.jpg" alt="Imagen 19">
+        <img src="imagenes/img20.jpg" alt="Imagen 20">
+        <img src="imagenes/img21.jpg" alt="Imagen 21">
+        <img src="imagenes/img22.jpg" alt="Imagen 22">
+        <img src="imagenes/img23.jpg" alt="Imagen 23">
+        <img src="imagenes/img24.jpg" alt="Imagen 24">
+        <img src="imagenes/img25.jpg" alt="Imagen 25">
+        <img src="imagenes/img26.jpg" alt="Imagen 26">
+        <img src="imagenes/img27.jpg" alt="Imagen 27">
+        <img src="imagenes/img28.jpg" alt="Imagen 28">
+        <img src="imagenes/img29.jpg" alt="Imagen 29">
+        <img src="imagenes/img30.jpg" alt="Imagen 30">
+        <img src="imagenes/img31.jpg" alt="Imagen 31">
+        <img src="imagenes/img32.jpg" alt="Imagen 32">
+        <img src="imagenes/img33.jpg" alt="Imagen 33">
+        <img src="imagenes/img34.jpg" alt="Imagen 34">
+        <img src="imagenes/img35.jpg" alt="Imagen 35">
+        <img src="imagenes/img36.jpg" alt="Imagen 36">
+        <img src="imagenes/img37.jpg" alt="Imagen 37">
+        <img src="imagenes/img38.jpg" alt="Imagen 38">
+        <img src="imagenes/img39.jpg" alt="Imagen 39">
+        <img src="imagenes/img40.jpg" alt="Imagen 40">
+        <img src="imagenes/img41.jpg" alt="Imagen 41">
+        <img src="imagenes/img42.jpg" alt="Imagen 42">
+        <img src="imagenes/img43.jpg" alt="Imagen 43">
+        <img src="imagenes/img44.jpg" alt="Imagen 44">
+        <img src="imagenes/img45.jpg" alt="Imagen 45">
+        <img src="imagenes/img46.jpg" alt="Imagen 46">
+        <img src="imagenes/img47.jpg" alt="Imagen 47">
+        <img src="imagenes/img48.jpg" alt="Imagen 48">
+        <img src="imagenes/img49.jpg" alt="Imagen 49">
+        <img src="imagenes/img50.jpg" alt="Imagen 50">
     </div>
-
-    <div id="modal" class="modal">
-        <span class="cerrar" onclick="cerrarModal()">&times;</span>
-        <img class="modal-contenido" id="imagen-modal">
-    </div>
-
-    <script>
-        // Ruta base donde se encuentran las im?genes
-//        const rutaBase = "file:///C:/imagenes/";
-        const rutaBase = "file:///C:/";
-
-        // Nombres de las imagenes (ajusta esto a tus archivos reales)
-        const imagenes = [
-            "imagen1.jpg", "imagen2.jpg", "imagen3.jpg", "imagen4.jpg", "imagen5.jpg",
-            "imagen6.jpg", "imagen7.jpg", "imagen8.jpg", "imagen9.jpg", "imagen10.jpg",
-            "imagen11.jpg", "imagen12.jpg", "imagen13.jpg", "imagen14.jpg", "imagen15.jpg",
-            "imagen16.jpg", "imagen17.jpg", "imagen18.jpg", "imagen19.jpg", "imagen20.jpg",
-            "imagen21.jpg", "imagen22.jpg", "imagen23.jpg", "imagen24.jpg", "imagen25.jpg",
-            "imagen26.jpg", "imagen27.jpg", "imagen28.jpg", "imagen29.jpg", "imagen30.jpg",
-            "imagen31.jpg", "imagen32.jpg", "imagen33.jpg", "imagen34.jpg", "imagen35.jpg",
-            "imagen36.jpg", "imagen37.jpg", "imagen38.jpg", "imagen39.jpg", "imagen40.jpg",
-            "imagen41.jpg", "imagen42.jpg", "imagen43.jpg", "imagen44.jpg", "imagen45.jpg",
-            "imagen46.jpg", "imagen47.jpg", "imagen48.jpg", "imagen49.jpg", "imagen50.jpg"
-        ];
-
-        // Obtener referencia al contenedor de la galer?a
-        const galeria = document.getElementById('galeria');
-        
-        // Cargar im?genes en la galer?a
-        imagenes.forEach((imagen, index) => {
-            const rutaCompleta = rutaBase + imagen;
-            
-            const contenedor = document.createElement('div');
-            contenedor.className = 'imagen-container';
-            
-            const img = document.createElement('img');
-            img.src = rutaCompleta;
-            img.alt = `Imagen ${index + 1}`;
-            img.className = 'imagen';
-            img.onclick = function() {
-                abrirModal(rutaCompleta);
-            }
-            
-            const pie = document.createElement('div');
-            pie.className = 'pie-imagen';
-            pie.textContent = `Imagen ${index + 1}`;
-            
-            contenedor.appendChild(img);
-            contenedor.appendChild(pie);
-            galeria.appendChild(contenedor);
-        });
-
-        // Funciones para el modal
-        function abrirModal(rutaImagen) {
-            const modal = document.getElementById('modal');
-            const imagenModal = document.getElementById('imagen-modal');
-            
-            imagenModal.src = rutaImagen;
-            modal.style.display = "block";
-        }
-
-        function cerrarModal() {
-            document.getElementById('modal').style.display = "none";
-        }
-
-        // Cerrar modal al hacer clic fuera de la imagen
-        window.onclick = function(event) {
-            const modal = document.getElementById('modal');
-            if (event.target == modal) {
-                cerrarModal();
-            }
-        }
-    </script>
 </body>
 </html>
