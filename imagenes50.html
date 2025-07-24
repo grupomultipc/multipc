@@ -13,11 +13,13 @@
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr 1fr;
             overflow: hidden;
+            font-family: Arial, sans-serif;
         }
         
         .imagen-container {
             overflow: hidden;
             position: relative;
+            border: 1px solid #ddd;
         }
         
         .imagen-container img {
@@ -43,31 +45,51 @@
             font-size: 18px;
             z-index: 10;
         }
+
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #666;
+        }
     </style>
 </head>
 <body>
     <div class="titulo">Imágenes de Glamping - Repositorio GitHub</div>
     
     <div class="imagen-container">
-        <img src="imagen1.jpg" alt="Imagen Glamping 1">
+        <div class="loading">Cargando imagen 1...</div>
+        <img src="https://grupomultipc.github.io/multipc/imagen1.jpg" alt="Imagen Glamping 1" loading="lazy">
     </div>
     <div class="imagen-container">
-        <img src="imagen2.jpg" alt="Imagen Glamping 2">
+        <div class="loading">Cargando imagen 2...</div>
+        <img src="https://grupomultipc.github.io/multipc/imagen2.jpg" alt="Imagen Glamping 2" loading="lazy">
     </div>
     <div class="imagen-container">
-        <img src="imagen3.jpg" alt="Imagen Glamping 3">
+        <div class="loading">Cargando imagen 3...</div>
+        <img src="https://grupomultipc.github.io/multipc/imagen3.jpg" alt="Imagen Glamping 3" loading="lazy">
     </div>
     <div class="imagen-container">
-        <img src="imagen4.jpg" alt="Imagen Glamping 4">
+        <div class="loading">Cargando imagen 4...</div>
+        <img src="https://grupomultipc.github.io/multipc/imagen4.jpg" alt="Imagen Glamping 4" loading="lazy">
     </div>
 
     <script>
-        // Verificar si las imágenes existen y manejar errores
-        document.querySelectorAll('img').forEach(img => {
-            img.onerror = function() {
-                this.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"%3E%3Crect fill="%23ddd" width="400" height="300"/%3E%3Ctext fill="%23666" font-family="Arial" font-size="20" dy=".5em" text-anchor="middle" x="200" y="150"%3EImagen no encontrada%3C/text%3E%3C/svg%3E';
-                this.alt = 'Imagen no disponible';
-            };
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.imagen-container img').forEach(img => {
+                // Eliminar mensaje de carga cuando la imagen se cargue
+                img.onload = function() {
+                    this.previousElementSibling.style.display = 'none';
+                };
+                
+                // Manejar errores
+                img.onerror = function() {
+                    this.previousElementSibling.textContent = 'Imagen no encontrada';
+                    this.style.display = 'none';
+                    console.error('Error al cargar: ' + this.src);
+                };
+            });
         });
     </script>
 </body>
